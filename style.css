@@ -1,0 +1,303 @@
+/* --- VARIABLES Y ESTILOS GLOBALES --- */
+:root {
+    --primary-color: #D32F2F; /* Rojo del logo */
+    --secondary-color: #F3F4F6; /* Gris claro para los fondos */
+    --accent-color: #c21a1a; /* Rojo más oscuro para los acentos */
+    --text-color: #333;
+    --light-text-color: #FFFFFF;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; color: var(--primary-color); }
+p { margin-bottom: 1rem; }
+
+/* --- HEADER Y NAVEGACIÓN --- */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 0;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* --- BOTONCITOS */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #a91616;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/Imagen_Fondo_Index.jpg') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text-color);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- SECCIÓN DE PROMOCIONES --- */
+.promotions-section, .promotions-page-section {
+    padding: 4rem 0;
+    background-color: var(--secondary-color);
+}
+.promotions-page-section { background-color: #fff; }
+
+.promotions-section h2, .promotions-page-section h2, .contact-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.promo-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.promo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.promo-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.promo-info p {
+    flex-grow: 1;
+}
+
+.promo-info h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.promo-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* --- SECCIÓN DE SUSCRIPCIÓN --- */
+.subscription-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.subscription-section h2 {
+    color: var(--light-text-color);
+}
+
+.subscription-form {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscription-form input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-family: var(--font-body);
+}
+
+/* --- PÁGINA DE CONTACTO --- */
+.contact-section {
+    padding: 4rem 0;
+}
+
+.contact-section p {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-body);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+
+    .main-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo {
+        /* Se quita el margen negativo en móvil para que se centre bien */
+        margin-left: 0;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+
+    .subscription-form {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .subscription-form input {
+        width: 100%;
+    }
+}
