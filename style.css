@@ -58,7 +58,7 @@ p { margin-bottom: 1rem; }
     align-items: center;
 }
 
-/* Alinear verticalmente los "ver mas" en tarjetas */
+/* Ajustar el tamaño del logo "siman" para que no abarque toda la pantalla */
 .logo {
     margin-left: 0;
 }
